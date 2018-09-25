@@ -1,8 +1,6 @@
 # Scientific Calculator 
 
-**Cross Platform Scientific Calculator**
-
-A scientific calculator project for college assignment.
+**Cross platform scientific calculator written in [python](https://github.com/python) and [electron](https://github.com/electron)**
 
 ## To Use
 

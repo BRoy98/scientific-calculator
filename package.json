@@ -1,0 +1,16 @@
+{
+  "name": "scientific-calculator",
+  "version": "1.0.0",
+  "description": "A scientific calculator for college project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {},
+  "dependencies": {
+    "@material/button": "^0.40.0"
+  }
+}

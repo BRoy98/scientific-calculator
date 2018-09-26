@@ -1,13 +1,31 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {
+  app,
+  BrowserWindow,
+  ipcMain
+} = require('electron')
+
+// Reload window when a change is detected in the code
+try {
+  require('electron-reloader')(module);
+} catch (err) {}
 
 // Keep a global reference of the window object, if we don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 600, height: 400})
+  mainWindow = new BrowserWindow({
+    title: "Scientific Calculator",
+    width: 600,
+    height: 380,
+    'minHeight': 300,
+    'minWidth': 300,
+    'maxHeight': 380,
+    'maxWidth': 600,
+    frame: false,
+  })
 
   // and load the index.html of the app.
   mainWindow.loadFile('ui/main_view.html')
@@ -17,9 +35,6 @@ function createWindow () {
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null
     app.quit()
   })
@@ -27,10 +42,13 @@ function createWindow () {
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
-app.on('ready', createWindow)
+app.on('ready', function () {
+  createWindow();
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
+  app.quit()
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
@@ -44,4 +62,12 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
+})
+
+ipcMain.on('close-click', function () {
+  closeWindow();
+})
+
+ipcMain.on('minimize-click', function () {
+  mainWindow.minimize()
 })

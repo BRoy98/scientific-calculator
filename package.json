@@ -6,11 +6,21 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "build": {
+    "appId": "lpu.cse.scicalc"
+  },
+  "repository": "https://github.com/BRoy98/scientific-calculator",
   "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {},
+  "license": "GNU GPL v3.0",
+  "devDependencies": {
+    "electron-packager": "^12.1.2",
+    "electron-reloader": "^0.2.0"
+  },
   "dependencies": {
-    "@material/button": "^0.40.0"
+    "@material/dialog": "^0.40.0",
+    "@material/drawer": "^0.40.0",
+    "electron-drag": "^1.2.2",
+    "jquery": "^3.3.1",
+    "python-shell": "^1.0.4"
   }
 }

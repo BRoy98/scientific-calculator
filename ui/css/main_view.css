@@ -1,1 +1,86 @@
-@import "@material/button/mdc-button";
+@font-face {
+  font-family: 'productSans';
+  src: url('../asset/ProductSansRegular.ttf');
+}
+
+@font-face {
+  font-family: 'productSans';
+  src: url('../asset/ProductSansBold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'productSans';
+  src: url('../asset/ProductSansItalic.ttf');
+  font-style: italic
+}
+
+* {
+  font-family: productSans;
+}
+
+.container-fluid {
+  /* padding-right: 0px; */
+  /* padding-left: 0px; */
+  padding-top: 48px;
+}
+
+.number-column {
+  background-color: blue
+}
+
+.basic-column {
+  background-color: aquamarine
+}
+
+.sci-column {
+  background-color: brown
+}
+
+.num-btn {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.basic-btn {
+  background-color: rgb(226, 226, 226) !important;
+  border: 0ch;
+}
+
+.basic-btn:hover {
+  background-color: rgb(243, 243, 233) !important;
+}
+
+.btn {
+  border-radius: 0em;
+  height: 52.9px;
+}
+
+.displayBox {
+  height: 120px;
+  background-color: #6223EE;
+}
+
+.toolbar-button {
+  --mdc-ripple-fg-size: 28px;
+  --mdc-ripple-fg-scale: 1.71429;
+  --mdc-ripple-left: 10px;
+  --mdc-ripple-top: 10px;
+}
+
+.toolbar {
+  font-family: productSans;
+  -webkit-app-region: drag;
+}
+
+.toolbar-button {
+  -webkit-app-region: no-drag;
+}
+
+.title-span {
+  cursor: default;
+}
+
+*:focus {
+  outline: 0 !important;
+}
